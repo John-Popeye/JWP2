@@ -29,7 +29,7 @@ class Vector3D:
         y = [other.x, other.y, other.z]
         result = np.cross(x, y)
         return Vector3D(result[0], result[1], result[2])
-    
+    @staticmethod
     def are_orthogonal(self, other):
         if self.dot(other) == 0:
             return True
