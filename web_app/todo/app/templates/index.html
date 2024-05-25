@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+</head>
+<body>
+    <h1>Add TODO</h1>
+        Description: <input type="text" id='description' name="Description"><br>
+        Creator: <input type="text"  id='creator' name="creator"><br>
+        DueDate: <input type="date" id='dueDate' name="dueDate"><br>
+        <input id='save_button' type="submit" value="Save">
+
+
+
+
+    <h1>TODO List</h1>
+    <ul>
+        {% for post in posts %}
+        <div>ID:{{post.id}}<br> Description: {{ post.description }} <br>Creator: {{ post.creator }} <br>Due Date: {{post.dueDate}}</div>
+        <button type="button" onClick="deletePost({{post.id}})">Delete</button>
+        {% endfor %}
+    </ul>
+</body>
+<script src="{{url_for('static', filename='logic.js')}}"></script>
+
+</html>
